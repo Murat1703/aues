@@ -8,11 +8,16 @@
 	.sidebar-content{
 		grid-template-columns: auto auto;
 	}
+	.administration-card-item-inner{
+		flex-direction: column;
+	}
+
 }
 @media (max-width: 676px){
 	.social-icons, .search-icon{
 		display: none;
 	}
+
 }
 @media (max-width: 576px){
 	.sidebar-content{
@@ -24,14 +29,22 @@
 	.footer-menu-list{
 		gap:  10px;
 	}
-}
-@media (max-width: 375px){
-	.main-title-block{
-		padding-top: 80px;
-	}
 	.lang-switcher span{
 		display: block;
 		padding-right: 0;
 		padding-bottom: 3px;
+	}
+	.about-admin::after{
+		right: 0;
+	}
+}
+@media (max-width: 390px){
+	.admin-photo{
+		width: 100%;
+	}
+}
+@media (max-width: 375px){
+	.main-title-block{
+		padding-top: 80px;
 	}
 }

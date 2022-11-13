@@ -15,6 +15,8 @@
     <script src="https://code.jquery.com/jquery-3.6.1.js" defer></script>
     <script src="js/slick.js" defer></script>
     <script src="js/script.js" defer></script>
+    <script src="js/map.js" defer></script>
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
 </head>
 <body>
     
@@ -123,124 +125,66 @@
         <li><a href="contacts.html">Контакты</a></li>
     </section>
 
-    <section class="main-wrapper __wrapper">
-        <div class="main-inner ">
-            <div class="main-title-block">
-                <div class="main-title">
-                    Актауское управление электрических сетей
-                </div>
-                <div class="main-sub-title">
-                    Государственное коммунальное предприятие на праве хозяйственного ведения акимата города Актау
-                </div>
-                <div class="main-button">
-                    <a href="#" class="main-btn"><span>О предприятии</span></a>
-                </div>
+    <section class="contact-us-wrapper">
+        <div class="contact-us-inner">
+            <div class="about-us-breadcrumbs">
+                <span>Главная</span>
+                <span> / </span>
+                <span> Предприятие /</span>
+                <span> Информация о предприятии</span>
             </div>
-        </div>
-    </section>
-
-    <section class="sidebar-news-wrapper __wrapper">
-        <div class="sidebar-news-inner">
-            <div class="sidebar-content">
-                <div class="sidebar-news">
-                    <div class="sidebar-news-title __sidebar-title __title-left">
-                        Новости
-                    </div>
-                    <div class="news-items">
-                        <div class="news-item">
-                            <div class="news-item-title">
-                                Энергетикалық кешендері жылыту маусымына дайын
-                            </div>
-                            <div class="news-item-date">
-                                01.09.2022
-                            </div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-item-title">
-                                Энергетикалық кешендері жылыту маусымына дайын
-                            </div>
-                            <div class="news-item-date">
-                                01.09.2022
-                            </div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-item-title">
-                                В честь Международного дня пожилых людей, сотрудники навестили и поздравили Ветеранов и Тружеников тыла Великой Отечественной Войны
-                            </div>
-                            <div class="news-item-date">
-                                28.07.2022
-                            </div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-item-title">
-                                В честь Международного дня пожилых людей, сотрудники навестили и поздравили Ветеранов и Тружеников тыла Великой Отечественной Войны
-                            </div>
-                            <div class="news-item-date">
-                                28.07.2022
-                            </div>
-                        </div>
-                        <a href="" class="link-all-news __all-link">Все новости</a>
-                    </div>
-                </div>
-                <div class="sidebar-articles">
-                    <div class="sidebar-articles-title __sidebar-title">
-                        Предприятие
-                    </div>
-                    <div class="sidebar-articles-content">
-                        Государственное коммунальное предприятие «Актауское управление электрических сетей» на праве хозяйственного ведения акимата г. Актау (ГКП «АУЭС») создано в соответствии с решением Актауской городской администрации от 04 декабря 1992 года № 1073. ГКП «АУЭС» приказом Управления Агентства Республики Казахстан по регулированию естественных монополии по Мангистауской области № 01-05/18-ОД от 21 августа 2006 года включено в местный раздел Государственного регистра субъектов естественных монополии управления Агентства Республики Казахстан по регулированию естественных монополии по Мангистауской области по виду деятельности- передача и распределение электроэнергии.
-
-                    </div>
-                    <a href="" class="sidebar-articles-link __all-link">Подробнее</a>
-                </div>
-                <div class="sidebar-media">
-                    <div class="sidebar-media-title __sidebar-title">
-                        Медиа
-                    </div>
-                    <div class="sidebar-media-content">
-                        <div class="media-item">
-                            <div class="media-item-img">
-                                <img src="img/sidebar/thumbnail.jpg" alt="thumbnail">
-                            </div>
-                            <div class="media-item-title">
-                                Государственное коммунальное предприятие
-                            </div>
-                            <div class="media-item-date">
-                                18.10.2018
-                            </div>
-                        </div>
-                        <div class="media-item">
-                            <div class="media-item-img">
-                                <img src="img/sidebar/thumbnail.jpg" alt="thumbnail">
-                            </div>
-                            <div class="media-item-title">
-                                Государственное коммунальное предприятие
-                            </div>
-                            <div class="media-item-date">
-                                18.10.2018
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+            <div class="about-us-title">
+                Информация о предприятии
             </div>
-        </div>
-    </section>
+            <div class="map-container" id="map"></div>
+            <div class="contacts-list">
+                <div class="contact-list-item __contact-list-item-yellow">
+                    <div class="contact-list-item-inner">
+                        <div class="contact-list-item-img">
+                            <img src="img/!map/map-icon.svg" alt="geoposition">
+                        </div>
+                        <div class="contact-list-content">
+                            <p class="contact-list-content-title">Адрес</p>
+                            <p>г.Актау , 3Б мкр., промышленная зона 1, здание 38, а\я 113,
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-list-item __contact-list-item-green">
+                    <div class="contact-list-item-inner">
+                        <div class="contact-list-item-img">
+                            <img src="img/!map/call-icon.svg" alt="geoposition">
+                        </div>
+                        <div class="contact-list-content">
+                            <p class="contact-list-content-title">Call центр</p>
+                            <p>57-12-56 </p><p>факс 57-12-26,</p>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-list-item __contact-list-item-yellow">
+                    <div class="contact-list-item-inner">
+                        <div class="contact-list-item-img">
+                            <img src="img/!map/time-icon.svg" alt="geoposition">
+                        </div>
+                        <div class="contact-list-content">
+                            <p class="contact-list-content-title">Время работы</p>
+                            <p>Пн-Пт 09:00-20:00
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-list-item __contact-list-item-green">
+                    <div class="contact-list-item-inner">
+                        <div class="contact-list-item-img">
+                            <img src="img/!map/mail-icon.svg" alt="geoposition">
+                        </div>
+                        <div class="contact-list-content">
+                            <p class="contact-list-content-title">Почта</p>
+                            <p><a href="mailto:aues_aktau@mail.ru">aues_aktau@mail.ru</a></p>                            
+                        </div>
+                    </div>
+                </div>
 
-    <section class="partners-wrapper __wrapper">
-        <div class="partners-inner">
-            <div class="partners-container">
-                <div class="slider__item">
-                    <img src="img/partners/min_en_kz.png" alt="Министерство Энергетики">
-                </div>
-                <div class="slider__item">
-                    <img src="img/partners/sk_kz.png" alt="sk">
-                </div>
-                <div class="slider__item">
-                    <img src="img/partners/kmg_kz.png" alt="kmg_kz">
-                </div>
-                <div class="slider__item">
-                    <img src="img/partners/kaztransgaz_kz.png" alt="kaztransgaz">
-                </div>
             </div>
         </div>
     </section>
